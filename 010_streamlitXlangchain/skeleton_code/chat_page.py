@@ -15,13 +15,14 @@ if "history" not in st.session_state:
 def generate_response():
     pass
 
+
 # 2) 사용자 입력
 prompt = st.chat_input("무엇을 도와드릴까요?")
 
 # 3) 들어온 값 저장
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
-    response = generate_response(prompt, st.session_state.history)
+    response = generate_response(prompt)
     st.session_state.messages.append({"role": "ai", "content": response})
 
 # 4) 출력
